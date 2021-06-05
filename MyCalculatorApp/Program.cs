@@ -24,23 +24,27 @@ namespace MyCalculatorApp
                 switch (operation)
                 {
                     case "+":
-                        Calculator.GetValues(out Calculator.num1, out Calculator.num2);
-                        result = Calculator.Addition(Calculator.num1, Calculator.num2);
+                        Calculator.Num1 = Calculator.InputNum1();
+                        Calculator.Num2 = Calculator.InputNum2();
+                        result = Calculator.Addition(Calculator.Num1, Calculator.Num2);
                         flag = false;
                         break;
                     case "-":
-                        Calculator.GetValues(out Calculator.num1, out Calculator.num2);
-                        result = Calculator.Subtraction(Calculator.num1, Calculator.num2);
+                        Calculator.Num1 = Calculator.InputNum1();
+                        Calculator.Num2 = Calculator.InputNum2();
+                        result = Calculator.Subtraction(Calculator.Num1, Calculator.Num2);
                         flag = false;
                         break;
                     case "*":
-                        Calculator.GetValues(out Calculator.num1, out Calculator.num2);
-                        result = Calculator.Multiply(Calculator.num1, Calculator.num2); 
+                        Calculator.Num1 = Calculator.InputNum1();
+                        Calculator.Num2 = Calculator.InputNum2();
+                        result = Calculator.Multiply(Calculator.Num1, Calculator.Num2); 
                         flag = false;
                         break;
                     case "/":
-                        Calculator.GetValues(out Calculator.num1, out Calculator.num2);
-                        result = Calculator.Division(Calculator.num1, Calculator.num2);
+                        Calculator.Num1 = Calculator.InputNum1();
+                        Calculator.Num2 = Calculator.InputNum2();
+                        result = Calculator.Division(Calculator.Num1, Calculator.Num2);
                         flag = false;
                         break;
                     default:
