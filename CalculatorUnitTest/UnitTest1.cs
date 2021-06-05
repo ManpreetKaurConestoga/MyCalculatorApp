@@ -113,5 +113,13 @@ namespace CalculatorUnitTest
             double res = Calculator.Division(Calculator.Num1, Calculator.Num2); //act
             Assert.AreEqual(1.92, res); //assert
         }
+        [Test]
+        public void Division_by_zero()
+        {
+            Calculator.Num1 = 9.2;//arrange
+            Calculator.Num2 = 0;//arrange
+            double res = Calculator.Division(Calculator.Num1, Calculator.Num2); //act
+            Assert.AreEqual(0, res); //assert
+        }
     }
 }

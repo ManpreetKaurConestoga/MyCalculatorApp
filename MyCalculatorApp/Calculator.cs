@@ -97,10 +97,15 @@ namespace MyCalculatorApp
         {
             try
             {
+                if (Num2 == 0)
+                {
+                    throw new DivideByZeroException();
+                }
                 return Math.Round((Num1 / Num2), 2);
             }
             catch (DivideByZeroException)
             {
+                Console.WriteLine("Number can not be divided by zero");
                 return (0);
             }
         }
