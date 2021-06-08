@@ -170,7 +170,7 @@ namespace CalculatorUnitTest
         [TestCase(-100, -200.79, 0.5)]
         [TestCase(17, -1.5, -11.33)]
         [TestCase(-17, 17.1, -0.99)]
-        public void Division_of_two_negative_integers(int firstNumber, double secondNumber, double expectedResult)
+        public void Division_of_one_integer_and_one_decimal(int firstNumber, double secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
