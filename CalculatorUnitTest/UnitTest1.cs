@@ -7,119 +7,203 @@ namespace CalculatorUnitTest
     public class UnitTest
     {
         [Test]
-        public void Addition_of_two_positive_integers()
+        [TestCase(4,10,14)]
+        [TestCase(0,0,0)]
+        [TestCase(20,0,20)]
+        [TestCase(10001,10001,20002)]
+        [TestCase(-100,-200,-300)]
+        [TestCase(0,-17,-17)]
+        [TestCase(-17,17,0)]
+        public void Addition_of_two_integers(int firstNumber,int secondNumber,int expectedResult)
         {
-            Calculator.Num1 = 4;//arrange
-            Calculator.Num2 = 10;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Addition(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(14,res); //assert
+            Assert.AreEqual(expectedResult,res); //assert
         }
 
         [Test]
-        public void Addition_of_two_negative_integers()
+        [TestCase(4, 10.50, 14.50)]
+        [TestCase(0, 0.0, 0)]
+        [TestCase(0, 15.562987, 15.56)]
+        [TestCase(10001, 10001.999999, 20003)]
+        [TestCase(-100, -200.99, -300.99)]
+        [TestCase(0, -17.781, -17.78)]
+        [TestCase(-17, 17.001, 0)]
+        public void Addition_of_one_integer_and_one_decimal(int firstNumber, double secondNumber, double expectedResult)
         {
-            Calculator.Num1 = -12;//arrange
-            Calculator.Num2 = -20;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Addition(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(-32, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
 
         [Test]
-        public void Addition_of_two_decimal_numbers()
+        [TestCase(4.7, 10.5, 15.2)]
+        [TestCase(0.0, 0.0, 0.0)]
+        [TestCase(0.9999, 15.562987, 16.56)]
+        [TestCase(10001.1111111, 10001.999999, 20003.11)]
+        [TestCase(-100.01, -200.99, -301)]
+        [TestCase(0.0, -17.781, -17.78)]
+        [TestCase(-17.001, 17.001, 0)]
+        public void Addition_of_two_decimal_numbers(double firstNumber, double secondNumber, double expectedResult)
         {
-            Calculator.Num1 = 9.58;//arrange
-            Calculator.Num2 = 12.5;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Addition(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(22.08, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
 
         [Test]
-        public void Subtraction_of_two_positive_integers()
+        [TestCase(4, 10, -6)]
+        [TestCase(0, 0, 0)]
+        [TestCase(20, 0, 20)]
+        [TestCase(12000, 10000, 2000)]
+        [TestCase(-100, -200, 100)]
+        [TestCase(0, -17, 17)]
+        [TestCase(-17, 17, -34)]
+        public void Subtraction_of_two_integers(int firstNumber, int secondNumber, int expectedResult)
         {
-            Calculator.Num1 = 40;//arrange
-            Calculator.Num2 = 15;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Subtraction(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(25, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
 
         [Test]
-        public void Subtraction_of_two_negative_integers()
+        [TestCase(4, 10.50, -6.5)]
+        [TestCase(0, 0.0, 0.0)]
+        [TestCase(0, 15.562987, -15.56)]
+        [TestCase(10001, 10001.999999, -1)]
+        [TestCase(-100, -200.99, 100.99)]
+        [TestCase(0, -17.781, 17.78)]
+        [TestCase(-17, 17.001, -34.00)]
+        public void Subtraction_of_one_integer_and_one_decimal(int firstNumber, double secondNumber, double expectedResult)
         {
-            Calculator.Num1 = -30;//arrange
-            Calculator.Num2 = -16;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Subtraction(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(-14, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
 
         [Test]
-        public void Subtraction_of_two_decimal_numbers()
+        [TestCase(4.7, 10.5, -5.8)]
+        [TestCase(0.0, 0.0, 0.0)]
+        [TestCase(0.9999, 15.562987, -14.56)]
+        [TestCase(10001.1111111, 10001.999999, -0.89)]
+        [TestCase(-100.01, -200.99, 100.98)]
+        [TestCase(0.0, -17.781, 17.78)]
+        [TestCase(-17.001, 17.001, -34.00)]
+        public void Subtraction_of_two_decimal_numbers(double firstNumber, double secondNumber, double expectedResult)
         {
-            Calculator.Num1 = 15.50;//arrange
-            Calculator.Num2 = 7.25;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Subtraction(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(8.25, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
 
         [Test]
-        public void Multiplication_of_two_positive_integers()
+        [TestCase(4, 10, 40)]
+        [TestCase(0, 0, 0)]
+        [TestCase(20, 0, 0)]
+        [TestCase(12000, 10000, 120000000)]
+        [TestCase(-100, -200, 20000)]
+        [TestCase(1, -17, -17)]
+        [TestCase(-17, 17, -289)]
+        public void Multiplication_of_two_integers(int firstNumber, int secondNumber, int expectedResult)
         {
-            Calculator.Num1 = 11;//arrange
-            Calculator.Num2 = 15;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Multiply(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(165, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
 
         [Test]
-        public void Multiplication_of_two_negative_integers()
+        [TestCase(4, 10.50, 42)]
+        [TestCase(0, 0.0, 0.0)]
+        [TestCase(0, 15.562987, 0)]
+        [TestCase(10001, 10001.999999, 100030001.99)]
+        [TestCase(-100, -200.99, 20099)]
+        [TestCase(1, -17.781, -17.78)]
+        [TestCase(-17, 17.001, -289.02)]
+        public void Multiplication_of_one_integer_one_decimal(int firstNumber, double secondNumber, double expectedResult)
         {
-            Calculator.Num1 = -9;//arrange
-            Calculator.Num2 = -5;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Multiply(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(45, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
 
         [Test]
-        public void Multiplication_of_two_decimal_numbers()
+        [TestCase(4.7, 10.5, 49.35)]
+        [TestCase(0.0, 0.0, 0.0)]
+        [TestCase(0.9999, 15.562987, 15.56)]
+        [TestCase(10001.1111111, 10001.999999,100031113.32)]
+        [TestCase(-100.01, -200.99, 20101.01)]
+        [TestCase(1.1, -17.781, -19.56)]
+        [TestCase(-17.001, 17.001, -289.03)]
+        public void Multiplication_of_two_decimal_numbers(double firstNumber, double secondNumber, double expectedResult)
         {
-            Calculator.Num1 = 13.5;//arrange
-            Calculator.Num2 = 9.7;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Multiply(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(130.95, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
 
         [Test]
-        public void Division_of_two_positive_integers()
+        [TestCase(20, 3, 6.67)]
+        [TestCase(12000, 10000, 1.2)]
+        [TestCase(-100, -200, 0.5)]
+        [TestCase(17, -1, -17)]
+        [TestCase(-17, 17, -1)]
+        public void Division_of_two_integers(int firstNumber, int secondNumber, double expectedResult)
         {
-            Calculator.Num1 = 150;//arrange
-            Calculator.Num2 = 15;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Division(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(10, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
 
         [Test]
-        public void Division_of_two_negative_integers()
+        [TestCase(20, 3.5, 5.71)]
+        [TestCase(12000, 10000.99, 1.2)]
+        [TestCase(-100, -200.79, 0.5)]
+        [TestCase(17, -1.5, -11.33)]
+        [TestCase(-17, 17.1, -0.99)]
+        public void Division_of_two_negative_integers(int firstNumber, double secondNumber, double expectedResult)
         {
-            Calculator.Num1 = -99;//arrange
-            Calculator.Num2 = -9;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Division(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(11, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
 
         [Test]
-        public void Division_of_two_decimal_numbers()
+        [TestCase(20.5, 3.5, 5.86)]
+        [TestCase(12000.11, 10000.99, 1.2)]
+        [TestCase(-100.78, -200.79, 0.50)]
+        [TestCase(17.9, -1.5, -11.93)]
+        [TestCase(-17.1, 17.1, -1)]
+        public void Division_of_two_decimal_numbers(double firstNumber, double secondNumber, double expectedResult)
         {
-            Calculator.Num1 = 9.2;//arrange
-            Calculator.Num2 = 4.8;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Division(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(1.92, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
+
         [Test]
-        public void Division_by_zero()
+        [TestCase(0,0,0)]
+        [TestCase(0,1,0)]
+        [TestCase(10,0,0)]
+        [TestCase(-10,0,0)]
+        [TestCase(0,-10,0)]
+        public void Division_by_zero(double firstNumber, double secondNumber, double expectedResult)
         {
-            Calculator.Num1 = 9.2;//arrange
-            Calculator.Num2 = 0;//arrange
+            Calculator.Num1 = firstNumber;//arrange
+            Calculator.Num2 = secondNumber;//arrange
             double res = Calculator.Division(Calculator.Num1, Calculator.Num2); //act
-            Assert.AreEqual(0, res); //assert
+            Assert.AreEqual(expectedResult, res); //assert
         }
     }
 }
