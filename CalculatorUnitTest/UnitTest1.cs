@@ -14,7 +14,7 @@ namespace CalculatorUnitTest
         [TestCase(-100,-200,-300)]
         [TestCase(0,-17,-17)]
         [TestCase(-17,17,0)]
-        public void Addition_of_two_integers(int firstNumber,int secondNumber,int expectedResult)
+        public void Addition_TwoIntegers_ReturnsSum(int firstNumber,int secondNumber,int expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -30,7 +30,7 @@ namespace CalculatorUnitTest
         [TestCase(-100, -200.99, -300.99)]
         [TestCase(0, -17.781, -17.78)]
         [TestCase(-17, 17.001, 0)]
-        public void Addition_of_one_integer_and_one_decimal(int firstNumber, double secondNumber, double expectedResult)
+        public void Addition_OneIntegerOneDecimal_ReturnsSum(int firstNumber, double secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -46,7 +46,7 @@ namespace CalculatorUnitTest
         [TestCase(-100.01, -200.99, -301)]
         [TestCase(0.0, -17.781, -17.78)]
         [TestCase(-17.001, 17.001, 0)]
-        public void Addition_of_two_decimal_numbers(double firstNumber, double secondNumber, double expectedResult)
+        public void Addition_TwoDecimals_ReturnsSum(double firstNumber, double secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -62,7 +62,7 @@ namespace CalculatorUnitTest
         [TestCase(-100, -200, 100)]
         [TestCase(0, -17, 17)]
         [TestCase(-17, 17, -34)]
-        public void Subtraction_of_two_integers(int firstNumber, int secondNumber, int expectedResult)
+        public void Subtraction_TwoIntegers_ReturnsSubtract(int firstNumber, int secondNumber, int expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -78,7 +78,7 @@ namespace CalculatorUnitTest
         [TestCase(-100, -200.99, 100.99)]
         [TestCase(0, -17.781, 17.78)]
         [TestCase(-17, 17.001, -34.00)]
-        public void Subtraction_of_one_integer_and_one_decimal(int firstNumber, double secondNumber, double expectedResult)
+        public void Subtraction_OneIntegerOneDecimal_ReturnsSubtract(int firstNumber, double secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -94,7 +94,7 @@ namespace CalculatorUnitTest
         [TestCase(-100.01, -200.99, 100.98)]
         [TestCase(0.0, -17.781, 17.78)]
         [TestCase(-17.001, 17.001, -34.00)]
-        public void Subtraction_of_two_decimal_numbers(double firstNumber, double secondNumber, double expectedResult)
+        public void Subtraction_TwoDecimals_ReturnsSubtract(double firstNumber, double secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -110,7 +110,7 @@ namespace CalculatorUnitTest
         [TestCase(-100, -200, 20000)]
         [TestCase(1, -17, -17)]
         [TestCase(-17, 17, -289)]
-        public void Multiplication_of_two_integers(int firstNumber, int secondNumber, int expectedResult)
+        public void Multiplication_TwoIntegers_ReturnsProduct(int firstNumber, int secondNumber, int expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -126,7 +126,7 @@ namespace CalculatorUnitTest
         [TestCase(-100, -200.99, 20099)]
         [TestCase(1, -17.781, -17.78)]
         [TestCase(-17, 17.001, -289.02)]
-        public void Multiplication_of_one_integer_one_decimal(int firstNumber, double secondNumber, double expectedResult)
+        public void Multiplication_OneIntegerOneDecimal_ReturnsProduct(int firstNumber, double secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -142,7 +142,7 @@ namespace CalculatorUnitTest
         [TestCase(-100.01, -200.99, 20101.01)]
         [TestCase(1.1, -17.781, -19.56)]
         [TestCase(-17.001, 17.001, -289.03)]
-        public void Multiplication_of_two_decimal_numbers(double firstNumber, double secondNumber, double expectedResult)
+        public void Multiplication_TwoDecimals_ReturnsProduct(double firstNumber, double secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -156,7 +156,7 @@ namespace CalculatorUnitTest
         [TestCase(-100, -200, 0.5)]
         [TestCase(17, -1, -17)]
         [TestCase(-17, 17, -1)]
-        public void Division_of_two_integers(int firstNumber, int secondNumber, double expectedResult)
+        public void Division_TwoIntegers_ReturnsDivision(int firstNumber, int secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -170,7 +170,7 @@ namespace CalculatorUnitTest
         [TestCase(-100, -200.79, 0.5)]
         [TestCase(17, -1.5, -11.33)]
         [TestCase(-17, 17.1, -0.99)]
-        public void Division_of_one_integer_and_one_decimal(int firstNumber, double secondNumber, double expectedResult)
+        public void Division_OneIntegerOneDecimal_ReturnsDivision(int firstNumber, double secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -184,7 +184,7 @@ namespace CalculatorUnitTest
         [TestCase(-100.78, -200.79, 0.50)]
         [TestCase(17.9, -1.5, -11.93)]
         [TestCase(-17.1, 17.1, -1)]
-        public void Division_of_two_decimal_numbers(double firstNumber, double secondNumber, double expectedResult)
+        public void Division_TwoDoubleNumbers_ReturnsDivision(double firstNumber, double secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
@@ -198,7 +198,7 @@ namespace CalculatorUnitTest
         [TestCase(10,0,0)]
         [TestCase(-10,0,0)]
         [TestCase(0,-10,0)]
-        public void Division_by_zero(double firstNumber, double secondNumber, double expectedResult)
+        public void Division_ByZero_ReturnsZero(double firstNumber, double secondNumber, double expectedResult)
         {
             Calculator.Num1 = firstNumber;//arrange
             Calculator.Num2 = secondNumber;//arrange
